@@ -1,0 +1,46 @@
+# 声明式站点适配器示例 —— 复制到 ./bookforge-adapters/ 改一改就能用
+#
+# 什么时候需要它：内置适配器（paulgraham / wujie1230 / WordPress）都匹配不上，
+# 且站点的正文容器不是常见的 <article> / <main> / .post-content 时。
+#
+# 加载后 `bookforge adapters` 能看到它，`bookforge info <url>` 会显示命中。
+
+name: example-blog
+
+# —— 什么时候用这个适配器（三者至少给一个）——
+hosts: [example-blog.com, www.example-blog.com]
+# match_regex: "example\\.com/(post|article)/"
+# url_prefixes: ["https://example-blog.com/posts/"]
+
+# —— 正文在哪 ——
+# 按顺序尝试，第一个命中的作为正文容器。用 XPath。
+content_xpath:
+  - "//div[contains(@class,'entry-content')]"
+  - "//article"
+
+# 正文里的 h2 要不要降级成 h3（站点自己把标题写成 h1 时设为 1）
+heading_offset: 0
+
+# 解析前删掉的噪声
+remove:
+  - ".sidebar"
+  - ".comments"
+  - "nav"
+  - ".share-buttons"
+  - ".related-posts"
+
+# —— 元数据怎么取 ——
+title_selector: "h1.entry-title"
+author_selector: ".author-name"
+date_selector: "time"          # 有 datetime 属性会优先用它
+# date_attr: "datetime"
+date_regex: "\\d{4}-\\d{2}-\\d{2}"
+# author_regex: "作者[:：]\\s*(\\S+)"
+
+# —— 文章怎么找（不写就走通用发现）——
+discover:
+  feed: https://example-blog.com/feed
+  # sitemap: https://example-blog.com/sitemap.xml
+  # list_page: https://example-blog.com/archives
+link_include: "/20\\d\\d/"      # 只保留像文章的链接
+link_exclude: "/tag/|/category/|/page/"

@@ -1,0 +1,182 @@
+/* ============================================================
+ * book-forge 主题：classic（经典出版物风）
+ * 适合：文学、随笔、文集。正文衬线、首行缩进、行距疏朗。
+ * ============================================================ */
+
+body {
+  margin: 0;
+  padding: 0 4%;
+  font-family: "Noto Serif SC", "Source Han Serif SC", "Source Han Serif CN",
+               "Songti SC", SimSun, Georgia, "Times New Roman", serif;
+  line-height: 1.92;
+  color: #1d1a16;
+  background: transparent;
+  text-align: justify;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  word-spacing: 0.04em;
+}
+
+/* ---------- 标题层级 ---------- */
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.4;
+  color: #14100c;
+  text-align: left;
+  hyphens: none;
+  page-break-after: avoid;
+}
+
+h1 {  /* 章题 */
+  font-size: 1.72em;
+  text-align: center;
+  margin: 2.6em 0 1.1em;
+  letter-spacing: 0.06em;
+}
+h1::after {
+  content: "";
+  display: block;
+  width: 3.2em;
+  height: 2px;
+  margin: 0.85em auto 0;
+  background: currentColor;
+  opacity: 0.55;
+}
+h2 { font-size: 1.34em; margin: 2.1em 0 0.8em; letter-spacing: 0.03em; }
+h3 { font-size: 1.14em; margin: 1.8em 0 0.6em; }
+h4, h5, h6 { font-size: 1.02em; margin: 1.5em 0 0.5em; }
+
+/* ---------- 段落：首行缩进 2em，章节首段不缩进 ---------- */
+
+p {
+  margin: 0;
+  text-indent: 2em;
+  orphans: 2;
+  widows: 2;
+}
+
+/* 紧跟标题/引言/图片之后的段落视为"开篇段"，不缩进 */
+h1 + p, h2 + p, h3 + p, h4 + p, h5 + p, h6 + p,
+blockquote + p, figure + p, hr + p, table + p,
+p:first-child {
+  text-indent: 0;
+}
+
+/* 中西文混排：让阅读器自动处理间距（支持的阅读器生效） */
+body { text-autospace: normal; -webkit-text-autospace: normal; }
+
+/* ---------- 引用 ---------- */
+
+blockquote {
+  margin: 1.3em 1.4em;
+  padding: 0.15em 0 0.15em 1em;
+  border-left: 3px solid #8c8377;
+  color: #4c463e;
+  font-style: normal;
+}
+blockquote p { text-indent: 0; margin: 0.35em 0; }
+blockquote blockquote { margin-right: 0; }
+
+/* ---------- 代码 ---------- */
+
+code, kbd, samp {
+  font-family: "JetBrains Mono", Consolas, "Courier New", monospace;
+  font-size: 0.86em;
+  background: rgba(0, 0, 0, 0.055);
+  padding: 0.12em 0.34em;
+  border-radius: 3px;
+}
+
+pre {
+  background: #f5f2ec;
+  border: 1px solid #e2dccf;
+  border-radius: 4px;
+  padding: 0.9em 1.1em;
+  margin: 1.3em 0;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  line-height: 1.55;
+  font-size: 0.84em;
+  page-break-inside: avoid;
+}
+pre code { background: transparent; padding: 0; font-size: 1em; }
+
+/* ---------- 图片 ---------- */
+
+img { max-width: 100%; height: auto; }
+
+figure {
+  margin: 1.5em 0;
+  text-align: center;
+  page-break-inside: avoid;
+}
+figcaption {
+  font-size: 0.82em;
+  color: #6d665c;
+  margin-top: 0.55em;
+  font-style: normal;
+  letter-spacing: 0.04em;
+}
+
+/* ---------- 分隔线 ---------- */
+
+hr {
+  border: none;
+  text-align: center;
+  margin: 2.2em auto;
+  width: 40%;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.35;
+}
+
+/* ---------- 表格 ---------- */
+
+table {
+  border-collapse: collapse;
+  margin: 1.5em auto;
+  font-size: 0.88em;
+  line-height: 1.6;
+  max-width: 100%;
+}
+th, td {
+  border: 1px solid #b7ae9f;
+  padding: 0.42em 0.8em;
+  text-align: left;
+  vertical-align: top;
+}
+th { background: rgba(0, 0, 0, 0.045); font-weight: 700; }
+table p { text-indent: 0; }
+
+/* ---------- 脚注 ---------- */
+
+.footnote {
+  margin-top: 2.4em;
+  padding-top: 1em;
+  border-top: 1px solid rgba(0, 0, 0, 0.18);
+  font-size: 0.84em;
+  color: #4c463e;
+  line-height: 1.7;
+}
+.footnote p { text-indent: 0; margin: 0.4em 0; }
+sup { font-size: 0.72em; line-height: 0; }
+.footnote-backref { text-decoration: none; }
+
+/* ---------- 列表 ---------- */
+
+ul, ol { margin: 1em 0; padding-left: 2em; }
+li { margin: 0.28em 0; }
+
+/* ---------- 深色模式（支持的阅读器自适应） ---------- */
+
+@media (prefers-color-scheme: dark) {
+  body { color: #cfc9bf; }
+  h1, h2, h3, h4, h5, h6 { color: #e8e2d6; }
+  blockquote { color: #a89f92; border-left-color: #6b6357; }
+  pre { background: #211d18; border-color: #3a342c; }
+  code, kbd, samp { background: rgba(255, 255, 255, 0.08); }
+  .footnote { border-top-color: rgba(255, 255, 255, 0.22); color: #a89f92; }
+  figcaption { color: #948c7f; }
+}

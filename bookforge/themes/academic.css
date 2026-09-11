@@ -1,0 +1,169 @@
+/* ============================================================
+ * book-forge 主题：academic（学术 / 打印友好）
+ * 适合：研究、报告、教材。黑白为主、结构严谨、脚注规范。
+ * ============================================================ */
+
+body {
+  margin: 0;
+  padding: 0 5%;
+  font-family: "Noto Serif SC", "Source Han Serif SC", "Songti SC", SimSun,
+               "Times New Roman", serif;
+  line-height: 1.85;
+  color: #111;
+  text-align: justify;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+/* ---------- 标题：编号感、层级分明 ---------- */
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.4;
+  color: #000;
+  page-break-after: avoid;
+  hyphens: none;
+}
+
+h1 {
+  font-size: 1.5em;
+  margin: 2.4em 0 1em;
+  text-align: left;
+}
+h2 {
+  font-size: 1.24em;
+  margin: 2em 0 0.8em;
+}
+h3 {
+  font-size: 1.08em;
+  margin: 1.7em 0 0.6em;
+  font-style: italic;
+}
+h4, h5, h6 { font-size: 1em; margin: 1.5em 0 0.5em; }
+
+h1 + p, h2 + p { margin-top: 0.2em; }
+
+/* ---------- 段落：首行缩进、两端对齐 ---------- */
+
+p {
+  margin: 0;
+  text-indent: 2em;
+  orphans: 2;
+  widows: 2;
+}
+h1 + p, h2 + p, h3 + p, h4 + p, h5 + p, h6 + p,
+blockquote + p, figure + p, table + p, p:first-child {
+  text-indent: 0;
+}
+
+/* 强调样式学术惯例：斜体为主，少用粗体 */
+em { font-style: italic; }
+strong { font-weight: 700; }
+
+/* ---------- 引用：长引文块缩进式 ---------- */
+
+blockquote {
+  margin: 1.2em 2.4em;
+  font-size: 0.94em;
+  color: #333;
+  line-height: 1.75;
+}
+blockquote p { text-indent: 0; margin: 0.4em 0; }
+
+/* ---------- 代码 ---------- */
+
+code, kbd, samp {
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.85em;
+  background: #f2f2f2;
+  padding: 0 0.25em;
+}
+
+pre {
+  background: #f7f7f7;
+  border: 1px solid #ccc;
+  padding: 0.8em 1em;
+  margin: 1.3em 0;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-size: 0.8em;
+  line-height: 1.5;
+  page-break-inside: avoid;
+}
+pre code { background: transparent; padding: 0; }
+
+/* ---------- 图片：居中 + 题注编号 ---------- */
+
+img { max-width: 100%; height: auto; }
+
+figure {
+  margin: 1.5em auto;
+  text-align: center;
+  page-break-inside: avoid;
+}
+figcaption {
+  font-size: 0.8em;
+  color: #444;
+  margin-top: 0.6em;
+}
+figcaption::before {
+  content: "图 ";
+  font-weight: 700;
+}
+
+/* ---------- 分隔线 ---------- */
+
+hr {
+  border: none;
+  border-top: 1px solid #999;
+  margin: 2em 10%;
+}
+
+/* ---------- 表格：三线表 ---------- */
+
+table {
+  border-collapse: collapse;
+  margin: 1.5em auto;
+  font-size: 0.85em;
+  line-height: 1.55;
+  max-width: 100%;
+}
+caption {
+  caption-side: top;
+  font-size: 0.85em;
+  color: #444;
+  margin-bottom: 0.5em;
+}
+thead { border-top: 2px solid #000; border-bottom: 1px solid #000; }
+tbody { border-bottom: 2px solid #000; }
+th, td {
+  padding: 0.4em 0.9em;
+  text-align: left;
+  vertical-align: top;
+}
+th { font-weight: 700; }
+table p { text-indent: 0; margin: 0; }
+
+/* ---------- 脚注 ---------- */
+
+.footnote {
+  margin-top: 2.6em;
+  padding-top: 0.9em;
+  border-top: 1px solid #000;
+  font-size: 0.82em;
+  line-height: 1.72;
+  color: #222;
+}
+.footnote p { text-indent: 0; margin: 0.35em 0; }
+sup { font-size: 0.7em; line-height: 0; }
+.footnote-backref { text-decoration: none; }
+
+/* ---------- 列表 ---------- */
+
+ul, ol { margin: 1em 0; padding-left: 2.2em; }
+li { margin: 0.25em 0; }
+
+/* ---------- 链接：学术风，弱化颜色 ---------- */
+
+a { color: inherit; text-decoration: underline; }

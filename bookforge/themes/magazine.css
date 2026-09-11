@@ -1,0 +1,215 @@
+/* ============================================================
+ * book-forge 主题：magazine（杂志编辑风）
+ * 适合：叙事、特稿、观点。首字下沉、大标题、强视觉层级。
+ * ============================================================ */
+
+body {
+  margin: 0;
+  padding: 0 4%;
+  font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC",
+               SimSun, serif;
+  line-height: 1.88;
+  color: #1c1a17;
+  text-align: justify;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+/* ---------- 标题：大号、紧凑、编辑感 ---------- */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Georgia, "Noto Serif SC", serif;
+  font-weight: 700;
+  line-height: 1.28;
+  color: #131110;
+  page-break-after: avoid;
+  hyphens: none;
+}
+
+h1 {
+  font-size: 2.05em;
+  margin: 2.2em 0 0.7em;
+  letter-spacing: -0.01em;
+}
+h2 {
+  font-size: 1.42em;
+  margin: 2.1em 0 0.6em;
+  text-indent: -0.42em;   /* 悬挂标点感 */
+}
+h3 { font-size: 1.16em; margin: 1.8em 0 0.5em; }
+h4, h5, h6 { font-size: 1em; margin: 1.5em 0 0.45em; font-style: italic; }
+
+/* 标题下的细线 */
+h2::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  margin-top: 0.45em;
+  background: currentColor;
+  opacity: 0.18;
+}
+
+/* ---------- 段落 + 首字下沉 ---------- */
+
+p {
+  margin: 0 0 0.95em;
+  orphans: 2;
+  widows: 2;
+}
+
+/* 章节第一个段落：首字下沉（阅读器支持 float 即可） */
+h1 + p::first-letter,
+h2 + p::first-letter {
+  float: left;
+  font-size: 3.05em;
+  line-height: 0.82;
+  padding: 0.06em 0.09em 0 0;
+  font-weight: 700;
+  color: #8c3b2e;
+}
+
+/* 章首导语：紧跟标题的斜体段 */
+h1 + p em:first-child { color: #6d6659; }
+
+/* ---------- 引用：超大引号装饰 ---------- */
+
+blockquote {
+  position: relative;
+  margin: 1.6em 0.2em;
+  padding: 0.4em 0 0.4em 1.5em;
+  border-left: none;
+  color: #44403a;
+  font-size: 1.04em;
+  line-height: 1.72;
+  font-style: italic;
+}
+blockquote::before {
+  content: "\201C";
+  position: absolute;
+  left: -0.08em;
+  top: -0.12em;
+  font-size: 2.6em;
+  color: #c8bfae;
+  font-style: normal;
+  line-height: 1;
+}
+blockquote p { margin: 0.3em 0; }
+
+/* ---------- 代码 ---------- */
+
+code, kbd, samp {
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.85em;
+  background: rgba(140, 59, 46, 0.08);
+  color: #6d2f24;
+  padding: 0.1em 0.3em;
+}
+
+pre {
+  background: #f7f4ef;
+  border-top: 2px solid #8c3b2e;
+  border-bottom: 1px solid #e3ddd1;
+  padding: 0.9em 1em;
+  margin: 1.4em 0;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-size: 0.82em;
+  line-height: 1.58;
+  page-break-inside: avoid;
+}
+pre code { background: transparent; color: inherit; padding: 0; }
+
+/* ---------- 图片：出血感 ---------- */
+
+img { max-width: 100%; height: auto; }
+
+figure {
+  margin: 1.8em -2%;
+  text-align: center;
+  page-break-inside: avoid;
+}
+figcaption {
+  font-size: 0.78em;
+  color: #8a8375;
+  margin-top: 0.5em;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* ---------- 分隔线：三点装饰 ---------- */
+
+hr {
+  border: none;
+  margin: 2.4em auto;
+  width: 100%;
+  height: 1.1em;
+  background: none;
+}
+hr::after {
+  content: "· · ·";
+  display: block;
+  text-align: center;
+  font-size: 1.15em;
+  letter-spacing: 0.9em;
+  color: #a89d8a;
+  padding-left: 0.9em;
+}
+
+/* ---------- 表格 ---------- */
+
+table {
+  border-collapse: collapse;
+  margin: 1.5em auto;
+  font-size: 0.86em;
+  line-height: 1.55;
+  max-width: 100%;
+}
+th, td {
+  border-bottom: 1px solid #d9d2c4;
+  padding: 0.45em 0.8em;
+  text-align: left;
+  vertical-align: top;
+}
+th {
+  border-bottom: 2px solid #8c3b2e;
+  font-variant: small-caps;
+  letter-spacing: 0.05em;
+  color: #44403a;
+}
+table p { margin: 0; }
+
+/* ---------- 脚注 ---------- */
+
+.footnote {
+  margin-top: 2.6em;
+  padding-top: 1em;
+  border-top: 2px solid #8c3b2e;
+  font-size: 0.82em;
+  color: #5d574c;
+  line-height: 1.7;
+}
+.footnote p { margin: 0.4em 0; }
+sup { font-size: 0.72em; line-height: 0; color: #8c3b2e; }
+
+/* ---------- 列表 ---------- */
+
+ul, ol { margin: 1em 0 1.15em; padding-left: 1.8em; }
+li { margin: 0.3em 0; }
+li::marker { color: #8c3b2e; }
+
+@media (prefers-color-scheme: dark) {
+  body { color: #ccc6ba; }
+  h1, h2, h3, h4, h5, h6 { color: #eae4d8; }
+  h1 + p::first-letter, h2 + p::first-letter { color: #cf7f6e; }
+  blockquote { color: #a89f90; }
+  blockquote::before { color: #5a5348; }
+  pre { background: #211d17; border-top-color: #a05a48; border-bottom-color: #3a342a; }
+  code, kbd, samp { background: rgba(207, 127, 110, 0.14); color: #d99a8c; }
+  hr::after { color: #6b6355; }
+  th { border-bottom-color: #a05a48; color: #b3ab9d; }
+  td, th { border-bottom-color: #3d372d; }
+  .footnote { border-top-color: #a05a48; color: #a29a8c; }
+  figcaption { color: #8f887a; }
+}

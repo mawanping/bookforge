@@ -1,0 +1,172 @@
+/* ============================================================
+ * book-forge 主题：modern（现代无衬线）
+ * 适合：科技、互联网、商业。段间距式、清爽、屏幕阅读优化。
+ * ============================================================ */
+
+body {
+  margin: 0;
+  padding: 0 4%;
+  font-family: "Noto Sans SC", "Source Han Sans SC", "Source Han Sans CN",
+               "PingFang SC", "Microsoft YaHei", -apple-system, "Segoe UI",
+               Roboto, sans-serif;
+  line-height: 1.82;
+  color: #212528;
+  text-align: left;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+/* ---------- 标题 ---------- */
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.36;
+  color: #101215;
+  page-break-after: avoid;
+  hyphens: none;
+}
+
+h1 {
+  font-size: 1.66em;
+  margin: 2.4em 0 0.6em;
+  padding-left: 0.55em;
+  border-left: 5px solid #2f5d8a;
+}
+h2 {
+  font-size: 1.3em;
+  margin: 2em 0 0.55em;
+  padding-left: 0.5em;
+  border-left: 4px solid #7ba3c9;
+}
+h3 { font-size: 1.1em; margin: 1.7em 0 0.45em; }
+h4, h5, h6 { font-size: 1em; margin: 1.4em 0 0.4em; color: #3d444b; }
+
+/* ---------- 段落：无缩进，段间距式 ---------- */
+
+p {
+  margin: 0 0 1.05em;
+  orphans: 2;
+  widows: 2;
+}
+
+/* ---------- 引用 ---------- */
+
+blockquote {
+  margin: 1.35em 0;
+  padding: 0.8em 1.1em;
+  background: #f2f5f8;
+  border-left: 4px solid #2f5d8a;
+  border-radius: 0 4px 4px 0;
+  color: #39414a;
+}
+blockquote p { margin: 0.3em 0; }
+blockquote p:last-child { margin-bottom: 0; }
+
+/* ---------- 代码 ---------- */
+
+code, kbd, samp {
+  font-family: "JetBrains Mono", Consolas, "Courier New", monospace;
+  font-size: 0.85em;
+  background: #eef1f4;
+  color: #b83a5c;
+  padding: 0.14em 0.4em;
+  border-radius: 4px;
+}
+
+pre {
+  background: #16191d;
+  color: #dfe5ec;
+  border-radius: 6px;
+  padding: 1em 1.2em;
+  margin: 1.4em 0;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-size: 0.82em;
+  line-height: 1.6;
+  page-break-inside: avoid;
+}
+pre code { background: transparent; color: inherit; padding: 0; border-radius: 0; }
+
+/* ---------- 图片 ---------- */
+
+img { max-width: 100%; height: auto; border-radius: 4px; }
+
+figure {
+  margin: 1.6em 0;
+  text-align: center;
+  page-break-inside: avoid;
+}
+figcaption {
+  font-size: 0.8em;
+  color: #79828c;
+  margin-top: 0.5em;
+}
+
+/* ---------- 分隔线 ---------- */
+
+hr {
+  border: none;
+  margin: 2.4em 25%;
+  height: 2px;
+  background: #c9d2da;
+  border-radius: 1px;
+}
+
+/* ---------- 表格 ---------- */
+
+table {
+  border-collapse: collapse;
+  margin: 1.5em auto;
+  font-size: 0.87em;
+  line-height: 1.55;
+  max-width: 100%;
+}
+th, td {
+  border-bottom: 1px solid #d5dbe1;
+  padding: 0.45em 0.85em;
+  text-align: left;
+  vertical-align: top;
+}
+th {
+  border-bottom-width: 2px;
+  border-bottom-color: #2f5d8a;
+  color: #101215;
+  font-weight: 700;
+}
+tr:last-child td { border-bottom: none; }
+table p { margin: 0; }
+
+/* ---------- 脚注 ---------- */
+
+.footnote {
+  margin-top: 2.6em;
+  padding-top: 1.1em;
+  border-top: 1px solid #d5dbe1;
+  font-size: 0.84em;
+  color: #5b636d;
+  line-height: 1.7;
+}
+.footnote p { margin: 0.4em 0; }
+sup { font-size: 0.72em; line-height: 0; }
+
+/* ---------- 列表 ---------- */
+
+ul, ol { margin: 1em 0 1.2em; padding-left: 1.9em; }
+li { margin: 0.3em 0; }
+li > p { margin: 0.2em 0; }
+
+@media (prefers-color-scheme: dark) {
+  body { color: #c6ccd3; }
+  h1, h2, h3, h4, h5, h6 { color: #e8ecf1; }
+  h1 { border-left-color: #6d9cc7; }
+  h2 { border-left-color: #46688a; }
+  blockquote { background: #232830; color: #a9b2bd; border-left-color: #46688a; }
+  pre { background: #1a1e24; }
+  code, kbd, samp { background: #2b323b; color: #e08e9f; }
+  hr { background: #3a424c; }
+  th { border-bottom-color: #6d9cc7; }
+  td, th { border-bottom-color: #333b45; }
+  .footnote { border-top-color: #333b45; color: #99a3ae; }
+  figcaption { color: #8a93a0; }
+}

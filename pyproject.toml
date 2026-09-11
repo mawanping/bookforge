@@ -1,0 +1,51 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bookforge"
+version = "2.0.0"
+description = "把网站文章一键变成排版精良的 EPUB 电子书（Web → Markdown → 分组 → 封面 → EPUB）"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "bookforge contributors" }]
+keywords = ["epub", "ebook", "scraper", "markdown", "wordpress", "agent-skill"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Topic :: Text Processing :: Markup",
+  "Topic :: Internet :: WWW/HTTP",
+]
+dependencies = [
+  "requests>=2.28",
+  "lxml>=4.9",
+  "beautifulsoup4>=4.11",
+  "markdown>=3.4",
+  "EbookLib>=0.18",
+  "Pillow>=9.4",
+  "numpy>=1.24",
+]
+
+[project.optional-dependencies]
+yaml = ["pyyaml>=6.0"]
+fonts = ["fonttools>=4.40"]
+all = ["pyyaml>=6.0", "fonttools>=4.40"]
+dev = ["pytest>=7.0", "pyyaml>=6.0", "fonttools>=4.40"]
+
+[project.scripts]
+bookforge = "bookforge.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/your-name/bookforge"
+Source = "https://github.com/your-name/bookforge"
+
+[tool.setuptools]
+packages = ["bookforge"]
+
+[tool.setuptools.package-data]
+bookforge = ["themes/*.css", "adapters/*.yaml"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
