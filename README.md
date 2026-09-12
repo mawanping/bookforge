@@ -1,5 +1,12 @@
 # bookforge · 铸书
 
+[![GitHub stars](https://img.shields.io/github/stars/mawanping/bookforge?style=flat-square)](https://github.com/mawanping/bookforge/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/mawanping/bookforge?style=flat-square)](https://github.com/mawanping/bookforge/network/members)
+[![License](https://img.shields.io/github/license/mawanping/bookforge?style=flat-square)](LICENSE)
+[![Python](https://img.shields.io/badge/python-3.9+-blue?style=flat-square)](pyproject.toml)
+[![Version](https://img.shields.io/badge/version-2.0.0-blueviolet?style=flat-square)](CHANGELOG.md)
+[![Last commit](https://img.shields.io/github/last-commit/mawanping/bookforge?style=flat-square)](https://github.com/mawanping/bookforge/commits/main)
+
 **丢一个网址，拿一本电子书。**
 
 ```bash
