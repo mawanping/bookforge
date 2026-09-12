@@ -23,3 +23,6 @@ bookforge-adapters/*.local.yaml
 .idea/
 .DS_Store
 Thumbs.db
+
+# CI workflows 需带 workflow scope 的 token 才能推，先暂缓
+.github/workflows/
