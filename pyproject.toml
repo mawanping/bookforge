@@ -38,8 +38,8 @@ dev = ["pytest>=7.0", "pyyaml>=6.0", "fonttools>=4.40"]
 bookforge = "bookforge.cli:main"
 
 [project.urls]
-Homepage = "https://github.com/your-name/bookforge"
-Source = "https://github.com/your-name/bookforge"
+Homepage = "https://github.com/mawanping/bookforge"
+Source = "https://github.com/mawanping/bookforge"
 
 [tool.setuptools]
 packages = ["bookforge"]
